@@ -23,7 +23,16 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("comon"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-1whq.vercel.app"],
+        methods: ["GET"],
+        credentials: true
+    }
+));
+
+const MONGO_URL='mongodb+srv://maros24121990:1234@cluster0.uhtzk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+
 
 
 /* ROUTES */
@@ -34,9 +43,9 @@ app.use("/transaction", transactionRoutes);
 
 /* MONGOOSE SETUP */
 
-const PORT = process.env.PORT || 9000;
+const PORT = 1337 || 9000;
 mongoose
-    .connect(process.env.MONGO_URL, {
+    .connect(MONGO_URL, {
         // useNewUrlParser: true,
         // useUnifiedTopology: true,
     })
