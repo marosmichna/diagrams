@@ -23,13 +23,13 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("comon"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors(
-    {
-        origin: ["https://diagrams-gf1z.vercel.app"],
-        methods: ["GET"],
-        credentials: true
-    }
-));
+
+app.use(cors({
+    origin: ["https://diagrams-gf1z.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"], 
+}));
 
 const MONGO_URL='mongodb+srv://maros24121990:1234@cluster0.uhtzk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
