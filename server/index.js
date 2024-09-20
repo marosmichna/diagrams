@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors(
     {
-        origin: ["https://diagrams-gf1z.vercel.app/"],
+        origin: ["https://diagrams-gf1z.vercel.app"],
         methods: ["GET"],
         credentials: true
     }
