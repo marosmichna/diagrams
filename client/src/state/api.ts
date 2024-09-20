@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { GetKpisResponse, GetProductsResponse, GetTransactionsResponse } from "./types";
 
-const VITE_BASE_URL = "http://diagrams-api.vercel.app";
+const VITE_BASE_URL = "https://diagrams-api.vercel.app";
 
 export const api = createApi({
     // baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_BASE_URL }),
